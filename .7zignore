@@ -1,0 +1,8 @@
+.vs
+.vscode
+Coverage
+*\bin
+*\obj
+*.7z
+Docs\html
+Docs\Warnings.log

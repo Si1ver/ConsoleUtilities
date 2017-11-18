@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Anton Vasiliev</Authors>
+    <Product>Si1ver's Console Utilities Library</Product>
+    <Version>0.1.2</Version>
+    <Description>Open source library made to speed up development of console utility applications.</Description>
+    <RootNamespace>Silvers.ConsoleUtilities</RootNamespace>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Copyright>Copyright (c) 2017 Anton Vasiliev.</Copyright>
+    <PackageId>Silvers.ConsoleUtilities</PackageId>
+    <PackageTags>Silvers;Console;Command Line;Utility</PackageTags>
+    <PackageLicenseUrl>https://github.com/Si1ver/ConsoleUtilities/blob/master/License.md</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/Si1ver/ConsoleUtilities</PackageProjectUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="StyleCop.Analyzers" Version="1.0.2" PrivateAssets="All" />
+    <AdditionalFiles Include="stylecop.json" />
+    <None Include="..\License.md" Pack="true" PackagePath="License.md" />
+  </ItemGroup>
+</Project>
