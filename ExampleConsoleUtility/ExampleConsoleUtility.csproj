@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <Version>0.1.2</Version>
+    <Authors>Anton Vasiliev</Authors>
+    <Product>Example Project for Si1ver's Console Utilities Library</Product>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="StyleCop.Analyzers" Version="1.0.2" PrivateAssets="All" />
+    <ProjectReference Include="..\ConsoleUtilities\ConsoleUtilities.csproj" />
+    <AdditionalFiles Include="stylecop.json" />
+  </ItemGroup>
+</Project>

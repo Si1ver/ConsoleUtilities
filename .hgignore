@@ -1,4 +1,5 @@
-.hg/*
+syntax: glob
+.git/*
 .vs/*
 .vscode/*
 */obj/*
