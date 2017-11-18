@@ -10,7 +10,8 @@
     <Copyright>Copyright (c) 2017 Anton Vasiliev.</Copyright>
     <PackageId>Silvers.ConsoleUtilities</PackageId>
     <PackageTags>Silvers;Console;Command Line;Utility</PackageTags>
-    <PackageProjectUrl></PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/Si1ver/ConsoleUtilities/blob/master/License.md</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/Si1ver/ConsoleUtilities</PackageProjectUrl>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="StyleCop.Analyzers" Version="1.0.2" PrivateAssets="All" />
