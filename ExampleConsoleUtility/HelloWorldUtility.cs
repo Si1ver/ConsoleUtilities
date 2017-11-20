@@ -42,7 +42,7 @@ namespace S1.ExampleConsoleUtility
             string greeting = greetingArgument.isSpecified
                 ? greetingArgument.parameters[0] : "Hello";
 
-            // Parameter chesk is done. Now to primary functionality.
+            // Parameter check is done. Now to primary functionality.
             // Print greeting message to default output.
             context.Output.Stream.WriteLine($"{greeting}, {userName}!");
 
