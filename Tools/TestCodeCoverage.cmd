@@ -6,7 +6,7 @@ rem See the License.md file in the project root for full license information.
 rem This script will produce code coverage report using OpenCover and ReportGenerator (from local NuGet package cache).
 
 set open_cover="%userprofile%\.nuget\packages\opencover\4.6.519\tools\OpenCover.Console.exe"
-set report_generator="%userprofile%\.nuget\packages\reportgenerator\3.0.2\tools\ReportGenerator.exe"
+set report_generator="%userprofile%\.nuget\packages\reportgenerator\4.0.2\tools\netcoreapp2.0\ReportGenerator.dll"
 
 set coverage_target="dotnet.exe"
 set coverage_targetargs="test ConsoleUtilitiesTests\ConsoleUtilitiesTests.csproj /p:DebugType=full"
@@ -38,7 +38,7 @@ dotnet clean .\ConsoleUtilitiesTests\ConsoleUtilitiesTests.csproj
 
 rem Run tools.
 %open_cover% -register:user -target:%coverage_target% -targetargs:%coverage_targetargs% -filter:%coverage_filter% -output:%coverage_output% -oldstyle
-%report_generator% -reports:%coverage_output% -targetdir:%report_targetdir% -historydir:%report_historydir%
+dotnet %report_generator% -reports:%coverage_output% -targetdir:%report_targetdir% -historydir:%report_historydir%
 
 goto :eof
 

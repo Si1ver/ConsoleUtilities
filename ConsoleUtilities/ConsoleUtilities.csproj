@@ -14,8 +14,13 @@
     <PackageProjectUrl>https://github.com/Si1ver/ConsoleUtilities</PackageProjectUrl>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="StyleCop.Analyzers" Version="1.0.2" PrivateAssets="All" />
     <AdditionalFiles Include="stylecop.json" />
     <None Include="..\License.md" Pack="true" PackagePath="License.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="StyleCop.Analyzers" Version="1.0.2">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
   </ItemGroup>
 </Project>

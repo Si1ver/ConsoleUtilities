@@ -1,7 +1,27 @@
 language: csharp
 solution: SilversConsoleUtilities.sln
 mono: none
-dotnet: 2.1.4
+dotnet: 2.1.403
 script:
-    - dotnet restore ./SilversConsoleUtilities.sln
-    - dotnet build ./SilversConsoleUtilities.sln
+    - dotnet restore
+    #- dotnet test ConsoleUtilitiesTests/ConsoleUtilitiesTests.csproj -c Release -f "netcoreapp2.1"
+    #- dotnet test ConsoleUtilitiesTests/ConsoleUtilitiesTests.csproj -c Release -f "netcoreapp1.1
+
+env:
+  global:
+   # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
+   #   via the "travis encrypt" command using the project repo's public key
+   - secure: "QWsWA69Ic9kRRlwDJPJufQxOdv3l3rvAvt+oBrSnklkxG1xltxOP/yvScsm8SxzlgCiSaHzg9pDdmaSD78wT8FEBZ3XJ1eIADkCrpphpqFIQxbVMpAzRMek+lZIEt3/AmQus/iY6LIrctg9JS+2mMSNw1vBqlApUixIbhLtcC1lcl6qPNUGOcHO0wYO7yd1N+cNl+4uSMdUtYxHN8/hU0jiDBxD+JNrRBQiwJpc92eE5XSHEpcwlWzYgQzsEK2her+MiOUmZiosJPM4Tmer1VeHmOyMrW/xPMbdmwF6MVH2h2gkofcPAQp7xys6I4A43wOe+eAH7RIQHrH2cqc6LbUqQz/U+RJGh8IPUoHlqqwckKGY20c+IDfHnr+xazZQEU/d3ePrxDeKGb6xnxOcA7i1HI/CBTgXVnaeALl2Et0aY7yE5hoXPCV3td5y6yn+aYUTR2yP4qdEM0X/xDnJVY5Qr74C3ncIR0y8UclzGzK7DGSgNCxgc7WIR3I9qwl9RrXTRMOmV28qtQOUsrwUfkTmZmaWLYqZCumkSdGzmTFIUmsTjNLJLPA7K1Cuy4biCsvg+SqEX9kLGM65q2sDOvrEsz9Iehx/dmOWvbGuFpHrgPO3viRLbd6VHbqeAPwqh4Flldc/ITT4EgewIqnxJ3U3Egq4mv/v2TjvfZU9XUQU="
+
+before_install:
+  - echo -n | openssl s_client -connect https://scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-
+
+addons:
+  coverity_scan:
+    project:
+      name: "Si1ver/ConsoleUtilities"
+      description: "Open source library made to speed up development of console utility applications."
+    notification_email: si1ver1502@gmail.com
+    build_command_prepend: "msbuild /t:Clean"
+    build_command: "msbuild /t:Rebuild"
+    branch_pattern: coverity_scan
