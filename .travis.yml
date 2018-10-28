@@ -2,3 +2,6 @@ language: csharp
 solution: SilversConsoleUtilities.sln
 mono: none
 dotnet: 2.1.4
+script:
+    - dotnet restore ./SilversConsoleUtilities.sln
+    - dotnet build ./SilversConsoleUtilities.sln
