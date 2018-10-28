@@ -1,0 +1,4 @@
+language: csharp
+solution: SilversConsoleUtilities.sln
+mono: none
+dotnet: 2.1.4
